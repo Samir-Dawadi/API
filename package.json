@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Samir Dawadi",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "engines": {},
+  "devDependencies": {
+    "@types/node": "^25.9.0",
+    "node": "^22.22.3",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
