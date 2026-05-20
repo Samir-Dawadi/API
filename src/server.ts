@@ -1,10 +1,9 @@
 //http server
 import http from "http";
+import app from './app';
 
 const PORT: number = 9005;
-const server = http.createServer((req, res) => {
-    res.end("<h1>hello world</h1>")
-});
+const server = http.createServer(app);
 
 server.listen(PORT, () => {
     console.log("server running at 9005")
