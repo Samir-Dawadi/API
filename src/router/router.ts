@@ -1,4 +1,5 @@
 import { Router } from "express";
+import authRouter from "./auth-router"
 const mainRouter = Router();
 
 
@@ -9,12 +10,7 @@ mainRouter.get("/", (req, res) => {
         meta: null
     });
 });
-mainRouter.post("/login", (req, res) => {
-    res.json({
-        data: "Cannot login",
-        message: "fail",
-        meta: null
-    });
-});
+
+mainRouter.use(authRouter)
 
 export default mainRouter
