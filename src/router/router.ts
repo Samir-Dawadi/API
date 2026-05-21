@@ -1,5 +1,6 @@
 import { Router } from "express";
 import authRouter from "./auth-router"
+import CategoryRouter from "./category-router";
 const mainRouter = Router();
 
 
@@ -11,7 +12,7 @@ mainRouter.get("/", (req, res) => {
     });
 });
 
-mainRouter.use("/auth",authRouter)
-mainRouter.use("/category",)
+mainRouter.use("/auth", authRouter)
+mainRouter.use("/category", CategoryRouter)
 
 export default mainRouter
