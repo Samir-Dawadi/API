@@ -12,5 +12,6 @@ mainRouter.get("/", (req, res) => {
 });
 
 mainRouter.use("/auth",authRouter)
+mainRouter.use("/category",)
 
 export default mainRouter
