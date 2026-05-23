@@ -1,6 +1,6 @@
 import express, { Application } from "express"
 import mainRouter from "./router/router";
-// import ErrorHandler from "./middleware/ErrorHandlingMiddleware";
+import ErrorHandlingMiddleware from "./middleware/ErrorHandlingMiddleware";
 
 const app: Application = express()
 
@@ -8,5 +8,6 @@ const app: Application = express()
 app.use(mainRouter)
 
 
-
+//error handling
+app.use(ErrorHandlingMiddleware)
 export default app;
