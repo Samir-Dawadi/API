@@ -8,7 +8,9 @@ class AuthController {
         res.json({                                               //success ra failure duitai ko lai pathauna res.json nai hunxa tara failure i.e error ko lagi chai next vitra hunxa 
             data: "Cannot login check your username and password again",
             message: "fail",
-            meta: null
+            meta: null,
+            
+            
         });
     }
 
