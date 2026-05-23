@@ -1,10 +1,10 @@
-import type { Request, Response } from "express"
+import type { NextFunction, Request, Response } from "express"
 
 class AuthController {
 
-    useRegister = (req: Request, res: Response) => { }
+    useRegister = (req: Request, res: Response , next:NextFunction) => { }
 
-    loginUser = (req: Request, res: Response) => {
+    loginUser = (req: Request, res: Response , next:NextFunction) => {
         res.json({
             data: "Cannot login check your username and password again",
             message: "fail",
@@ -12,14 +12,16 @@ class AuthController {
         });
     }
 
-    activeUser=(req: Request, res: Response) => { }
-    resendActivationCode=(req: Request, res: Response) => { }
-    forgetPassword=(req: Request, res: Response) => { }
-    verifyForgetPassworedToken=(req: Request, res: Response) => { }
-    resetPassword=(req: Request, res: Response) => { }
-    Logout=(req: Request, res: Response) => { }
-    me=(req: Request, res: Response) => { }
-    changePassword=(req: Request, res: Response) => { }
+    activeUser=(req: Request, res: Response , next:NextFunction) => { 
+        next({})
+    }
+    resendActivationCode=(req: Request, res: Response , next:NextFunction) => { }
+    forgetPassword=(req: Request, res: Response , next:NextFunction) => { }
+    verifyForgetPassworedToken=(req: Request, res: Response , next:NextFunction) => { }
+    resetPassword=(req: Request, res: Response , next:NextFunction) => { }
+    Logout=(req: Request, res: Response , next:NextFunction) => { }
+    me=(req: Request, res: Response , next:NextFunction) => { }
+    changePassword=(req: Request, res: Response , next:NextFunction) => { }
 
 }
 

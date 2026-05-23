@@ -7,5 +7,6 @@ const app: Application = express()
 //routing
 app.use(mainRouter)
 
-// app.use(ErrorHandler)
+
+
 export default app;
