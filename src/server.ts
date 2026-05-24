@@ -11,13 +11,13 @@ server.listen(PORT, () => {
     console.log("Press ctrl + c to disconnect your server")
 })
 
-server.on("error", (err: NodeJS.ErrnoException) => {
-    if (err.code === "EADDRINUSE") {
+server.on("error", (err: NodeJS.ErrnoException) => {          //server.on le eventlisten garxa , yeha chai errror wala event listen garna laxa
+    if (err.code === "EADDRINUSE") {                          //if 9005 port is already used by other service than server will throw an error event 
         console.error(`port ${PORT} already in use . Try with different than ${PORT}`)
     }
     else {
         console.error("Server Error :", err.message)
     }
 
-    process.exit(1)
+    process.exit(1)                                             //It immediately terminates the Node.js process with an error status code.
 })
