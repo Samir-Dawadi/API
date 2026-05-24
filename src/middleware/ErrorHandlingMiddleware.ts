@@ -1,7 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
 
-
-
 export interface CustomError extends Error {
     detail?: Record<string, string | Array<Record<string, string>>> | null | number,
     code?: number | string

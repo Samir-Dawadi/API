@@ -1,7 +1,6 @@
 import express, { Application } from "express"
 import mainRouter from "./router/router";
 import ErrorHandlingMiddleware from "./middleware/ErrorHandlingMiddleware";
-import { error } from "console";
 
 const app: Application = express()
 
@@ -16,7 +15,7 @@ app.use((req, res, next) => {
     // })
 
     next({                                         // yo error vitra ko sab sidai ava errorhandlingmiddleware ko error ma gayera basxa 
-        error: null,
+        errors: null,
         message: "Server Error",
         meta: null
     })
