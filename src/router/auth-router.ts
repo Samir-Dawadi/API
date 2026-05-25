@@ -1,6 +1,12 @@
 import { NextFunction, Router, type Request, type Response } from "express";
 import AuthController from "../controller/AuthController"
 import checklogin from "../middleware/AuthMiddleware";
+import z from "zod"
+import bodyValidator from "../middleware/ValidationMiddleware"
+import ErrorHandlingMiddleware from "../middleware/ErrorHandlingMiddleware";
+import { loginDTO } from "../request/AuthRequest";
+
+
 const authRouter = Router()
 
 // const register = (req:Request,res:Response)=>{}
@@ -8,7 +14,8 @@ const authRouter = Router()
 const ac = new AuthController()
 
 
-authRouter.post("/login", ac.loginUser);
+
+authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);
 authRouter.post('/register', ac.useRegister);
 authRouter.post('/active-user', ac.activeUser);
 authRouter.post('/resend-activation-code', ac.resendActivationCode);

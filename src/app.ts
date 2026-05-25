@@ -6,7 +6,7 @@ const app: Application = express()
 
 
 
-//body parser
+//body parser i.e FrontEnd(for now we use postman) bata backend ma data receive garni tarika
 app.use(express.json({
     limit:"3mb"
 }))
