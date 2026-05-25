@@ -13,9 +13,12 @@ const authRouter = Router()
 
 const ac = new AuthController()
 
+// const loginDTO = z.object({                                       //this validation is created in another folder
+//     username: z.string().nonempty().nonoptional(),
+//     password: z.string().nonempty().nonoptional()
+// })
 
-
-authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);
+authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);           //validation done using zod
 authRouter.post('/register', ac.useRegister);
 authRouter.post('/active-user', ac.activeUser);
 authRouter.post('/resend-activation-code', ac.resendActivationCode);
