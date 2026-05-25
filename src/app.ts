@@ -7,13 +7,13 @@ const app: Application = express()
 
 
 //body parser i.e FrontEnd(for now we use postman) bata backend ma data receive garni tarika
-app.use(express.json({
-    limit:"3mb"
+app.use(express.json({                                   //for raw data 
+    limit: "3mb"                                          //max 3mb of data can be sent to backend from frontend(postman) we can change the value of limit
 }))
 
 
-app.use(express.urlencoded({
-    limit:"3mb"
+app.use(express.urlencoded({                             //for x-www-form-urlencoded data
+    limit: "3mb"
 }))
 
 //routing

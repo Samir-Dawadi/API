@@ -3,8 +3,8 @@ import z, { ZodError } from "zod"
 const bodyValidator = (schema: z.ZodType) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const data = req.body;
-            if (!data) {
+            const data = req.body;                                                  //here req.body gets the data from the frontend
+            if (!data) { 
                 next({ code: 422, message: "Data empty/not set" })
             }
 
