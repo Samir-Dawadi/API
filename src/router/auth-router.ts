@@ -1,10 +1,8 @@
 import { NextFunction, Router, type Request, type Response } from "express";
 import AuthController from "../controller/AuthController"
 import checklogin from "../middleware/AuthMiddleware";
-import z from "zod"
 import bodyValidator from "../middleware/ValidationMiddleware"
-import ErrorHandlingMiddleware from "../middleware/ErrorHandlingMiddleware";
-import { loginDTO } from "../request/AuthRequest";
+import { loginDTO, RegisterDTO } from "../request/AuthRequest";
 
 
 const authRouter = Router()
@@ -19,7 +17,7 @@ const ac = new AuthController()
 // })
 
 authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);           //validation done using zod
-authRouter.post('/register', ac.useRegister);
+authRouter.post('/register', bodyValidator(RegisterDTO), ac.useRegister);
 authRouter.post('/active-user', ac.activeUser);
 authRouter.post('/resend-activation-code', ac.resendActivationCode);
 

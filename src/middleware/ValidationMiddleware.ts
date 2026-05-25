@@ -11,7 +11,7 @@ const bodyValidator = (schema: z.ZodType) => {
             await schema.parseAsync(data)                                               //if data is send from front end then data will be validated with the help of schema that is created using zod , if data is validated then it will go to next and it ac.loginuser will be executed
             next()                                                                      
         }
-        catch (exception) {                                                              //yedi yeauta pani validation vayena vani ko case chai exception ma hunxa                     
+        catch (exception) {                                                              //yedi yeauta pani validation vayena vani ko case chai exception ma hunxa for eg username ma khali ani pass matra pathayo vani auxa error so testo case lai handle garna yesma use garxam                 
             let detail: Record<string, string> = {}
             if (exception instanceof ZodError) {
                 exception.issues.map((errObj: any) => {
