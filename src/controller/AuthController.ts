@@ -5,8 +5,10 @@ class AuthController {
     useRegister = (req: Request, res: Response , next:NextFunction) => { }
 
     loginUser = (req: Request, res: Response , next:NextFunction) => {
+
+        const credentials = req.body
         res.json({                                               //success ra failure duitai ko lai pathauna res.json nai hunxa tara failure i.e error ko lagi chai next vitra hunxa 
-            data: "Cannot login check your username and password again",
+            data: credentials,
             message: "fail",
             meta: null,
             

@@ -8,7 +8,7 @@ const authRouter = Router()
 const ac = new AuthController()
 
 
-authRouter.post("/auth/login", ac.loginUser);
+authRouter.post("/login", ac.loginUser);
 authRouter.post('/register', ac.useRegister);
 authRouter.post('/active-user', ac.activeUser);
 authRouter.post('/resend-activation-code', ac.resendActivationCode);
