@@ -11,8 +11,6 @@ class AuthController {
             data: credentials,
             message: "fail",
             meta: null,
-            
-            
         });
     }
 
