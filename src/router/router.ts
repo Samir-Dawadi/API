@@ -15,4 +15,5 @@ const mainRouter = Router();
 mainRouter.use("/auth", authRouter)
 mainRouter.use("/category", CategoryRouter)
 
+
 export default mainRouter
