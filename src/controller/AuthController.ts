@@ -3,12 +3,12 @@ import type { NextFunction, Request, Response } from "express"
 class AuthController {
 
     useRegister = (req: Request, res: Response, next: NextFunction) => {
-        const registerCredentials = req.body
-        res.json({                                               //success ra failure duitai ko lai pathauna res.json nai hunxa tara failure i.e error ko lagi chai next vitra hunxa 
-            data: registerCredentials,
-            message: "fail",
-            meta: null,
-        });
+        // const registerCredentials = req.body
+        // res.json({                                               //success ra failure duitai ko lai pathauna res.json nai hunxa tara failure i.e error ko lagi chai next vitra hunxa 
+        //     data: registerCredentials,
+        //     message: "fail",
+        //     meta: null,
+        // });
     }
 
     loginUser = (req: Request, res: Response, next: NextFunction) => {
