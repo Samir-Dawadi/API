@@ -10,16 +10,16 @@ const uploader = (dir: string = '/') => {
             try {
                 const __dirname = process.cwd();                                             //path of file upto API                                
                 console.log(__dirname)
-                const filePath = path.join(__dirname, `/public/uploads${dir}`)              //ka nira rakhni file
-                if (!fs.existsSync(filePath)) {
-                    fs.mkdirSync(filePath, { recursive: true })
+                const filePath = path.join(__dirname, `/public/uploads${dir}`)              //ka nira rakhni file i.e when user post some files 
+                if (!fs.existsSync(filePath)) {                                               //checks if the folder(public) exists or not if not (!) then creates it
+                    fs.mkdirSync(filePath, { recursive: true })                                 //ani file xaina vani yesle file create garxa using mkdirSync
                 }
                 cb(null, filePath)
             } catch (exception) {
                 console.log(new Error("Storage cannot be configured"))
             }
         },
-        filename: (req, file, cb) => {
+        filename: (req, file, cb) => {                                                             
             const ext = file.originalname.split(".").pop()
             const fileNamePrefix = dir !== '/' ? "Uploads" + dir.replace('/', '-') + "-" : 'Uploads';
             const fileName = `${fileNamePrefix}${Date.now()}.${ext}`

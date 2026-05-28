@@ -18,7 +18,7 @@ const ac = new AuthController()
 // })
 
 authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);           //validation done using zod
-authRouter.post('/register', uploader('/user').single('image'), ac.useRegister);
+authRouter.post('/register', uploader('/user').single('image'), ac.useRegister); 
 authRouter.post('/active-user', ac.activeUser);
 authRouter.post('/resend-activation-code', ac.resendActivationCode);
 
