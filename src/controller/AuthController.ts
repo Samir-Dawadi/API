@@ -24,8 +24,10 @@ class AuthController {
         const data = req.body
         data.password = bcrypt.hashSync(data.password, 12)
 
+        // console.log(bcrypt.compareSync(data.confirmpassword,data.passwprd))       //if db ma rakheko hashed pass ra confirm pass(jun db ma rakhdainau ) same vayo vani true else false
+
         //file optional
-        if (req.file) {
+        if (req.file) {                                            //req ma file ayo vani matra
             data.image = {
                 filename: req.file.filename,
                 path: req.file.destination,
