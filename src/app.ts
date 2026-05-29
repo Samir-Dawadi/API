@@ -3,6 +3,8 @@ import mainRouter from "./router/router";
 import ErrorHandlingMiddleware from "./middleware/ErrorHandlingMiddleware";
 import path from "path";
 
+import "./config/mongodbConfig"
+
 const app: Application = express()
 
 app.use("/assets", express.static(path.join(process.cwd(), `/public/uploads`)))

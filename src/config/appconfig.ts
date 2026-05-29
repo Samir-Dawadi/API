@@ -4,3 +4,10 @@ config()
 export const AppConfig = {
     assestsUrl: process.env.ASSEST_URL
 }
+
+
+export const MongoConfig = {
+    url: process.env.MONGODB_URL,
+    name: process.env.MONGODB_NAME
+}
+
