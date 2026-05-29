@@ -11,6 +11,16 @@ class AuthController {
         //     message: "fail",
         //     meta: null,
         // });
+
+        // const file = req.file               //for single file
+        // const file = req.files               //for multiple file
+        //res.json = ({data , file , files})     // data ra file difrnt json ma auxa
+
+
+        //data.image = req.file
+        //res.json(data)                            //data ra file yeautai json ma auxa kinaki ava data ko image (i.e postnam ko key ) ma req.file xa 
+
+
         const data = req.body
         data.password = bcrypt.hashSync(data.password, 12)
 
