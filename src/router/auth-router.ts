@@ -17,6 +17,12 @@ const ac = new AuthController()
 //     password: z.string().nonempty().nonoptional()
 // })
 
+// uploader().none() => if your request does not have a file upload but the content-type is multipart/form-data
+// uploader().single(field) -> if your request has a single file upload field
+// uploader().array(field) -> if your request has a multiple file upload field
+// uploader().fields([{name: "field", maxCount: number}]) => if your request has multiple file upload fields
+
+
 authRouter.post("/login", bodyValidator(loginDTO), ac.loginUser);           //validation done using zod
 authRouter.post('/register', uploader('/user').single('image'), ac.useRegister); 
 authRouter.post('/active-user', ac.activeUser);

@@ -1,4 +1,6 @@
+import bcrypt from "bcryptjs"
 import type { NextFunction, Request, Response } from "express"
+import { AppConfig } from "../config/appconfig"
 
 class AuthController {
 
@@ -9,6 +11,21 @@ class AuthController {
         //     message: "fail",
         //     meta: null,
         // });
+        const data = req.body
+        data.password = bcrypt.hashSync(data.password, 12)
+
+        //file optional
+        if (req.file) {
+            data.image = {
+                filename: req.file.filename,
+                path: req.file.destination,
+                type: req.file.mimetype,
+                size: req.file.size,
+                url: `{AppConfig.assetsUrl}user/${req.file.filename}`
+            }
+        }
+
+        res.json(data)
     }
 
     loginUser = (req: Request, res: Response, next: NextFunction) => {
