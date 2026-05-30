@@ -7,9 +7,6 @@ import uploader from "../middleware/UploaderMiddleware";
 
 
 const authRouter = Router()
-
-// const register = (req:Request,res:Response)=>{}
-
 const ac = new AuthController()
 
 // const loginDTO = z.object({                                       //this validation is created in another folder
@@ -35,7 +32,6 @@ authRouter.post('/reset-password', ac.resetPassword);
 
 
 //can be only accessed by logged in user , so before we do the loggout we must check that the user is logged in or not and that condition occurs for this below three route and that ccondition (logged or not) is checked by the middleware  
-
 
 authRouter.post('/logout', checklogin(), ac.Logout);
 authRouter.get('/me', checklogin(), ac.me);
